@@ -1,5 +1,5 @@
 DATA = {
-  :user_keys => 
+  :user_keys =>
     ["name", "nausea", "happiness", "tickets", "height"],
   :users => [
     ["Max Charles", 0, 3, 6, 32],
@@ -59,9 +59,10 @@ def make_attractions_and_rides
     attraction.each_with_index do |attribute, i|
       new_attraction.send(DATA[:attraction_keys][i] + "=", attribute)
     end
-    rand(1..8).times do 
+    rand(1..8).times do
       customers = []
       User.all.each {|u| customers << u if u.admin != true}
+      # binding.pry
       new_attraction.users << customers[rand(0...customers.length)]
     end
     new_attraction.users.each {|c| c.save}

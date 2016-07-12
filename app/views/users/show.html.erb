@@ -1,0 +1,9 @@
+<%= flash[:notice] %>
+
+<%= @user.name %><br>
+<%= @user.admin ? 'ADMIN' : "" %><br>
+Mood <%= @user.mood %><br>
+Tickets: <%= @user.tickets %><br>
+<%= @user.height %><br>
+<%= link_to 'Log Out', '/signout', method: :delete %><br>
+<%= link_to 'See attractions', attractions_path %><br>

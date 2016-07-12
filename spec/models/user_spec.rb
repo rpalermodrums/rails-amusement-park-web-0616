@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# binding.pry
 RSpec.describe User, :type => :model do
   let(:user) {
     User.create(
@@ -57,6 +57,7 @@ RSpec.describe User, :type => :model do
   end
 
   it "defaults to admin => false" do
+    # binding.pry
     expect(user.admin).to eq(false)
   end
 
